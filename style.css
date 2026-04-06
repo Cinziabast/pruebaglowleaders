@@ -2866,3 +2866,34 @@ body.english .section-bono .lang-en {
     font-size: 12px;
   }
 }
+
+/* HERO SLIDER */
+.hero-slider {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  position: relative;
+  overflow: hidden;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slider img.active {
+  opacity: 1;
+}
+
+.slider-en {
+  display: none;
+}
