@@ -1141,57 +1141,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const slidesEs = document.querySelectorAll('.slider-es .slide');
-  const slidesEn = document.querySelectorAll('.slider-en .slide');
-  const sliderEs = document.querySelector('.slider-es');
-  const sliderEn = document.querySelector('.slider-en');
-  const langButtons = document.querySelectorAll('.lang-btn');
+ const heroTrackEs = document.querySelector('.hero-track-es');
+const heroTrackEn = document.querySelector('.hero-track-en');
+const heroFramesEs = document.querySelectorAll('.hero-track-es .hero-frame');
+const heroFramesEn = document.querySelectorAll('.hero-track-en .hero-frame');
+const langBtns = document.querySelectorAll('.lang-btn');
 
-  let currentEs = 0;
-  let currentEn = 0;
+let heroIndexEs = 0;
+let heroIndexEn = 0;
 
-  function nextSlideEs() {
-    slidesEs[currentEs].classList.remove('active');
-    currentEs = (currentEs + 1) % slidesEs.length;
-    slidesEs[currentEs].classList.add('active');
+function rotateHero(frames, currentIndex) {
+  frames[currentIndex].classList.remove('is-active');
+  const nextIndex = (currentIndex + 1) % frames.length;
+  frames[nextIndex].classList.add('is-active');
+  return nextIndex;
+}
+
+setInterval(() => {
+  if (heroTrackEs && heroTrackEs.classList.contains('is-visible')) {
+    heroIndexEs = rotateHero(heroFramesEs, heroIndexEs);
   }
+}, 3000);
 
-  function nextSlideEn() {
-    slidesEn[currentEn].classList.remove('active');
-    currentEn = (currentEn + 1) % slidesEn.length;
-    slidesEn[currentEn].classList.add('active');
+setInterval(() => {
+  if (heroTrackEn && heroTrackEn.classList.contains('is-visible')) {
+    heroIndexEn = rotateHero(heroFramesEn, heroIndexEn);
   }
+}, 3000);
 
-  setInterval(() => {
-    if (sliderEs.classList.contains('active')) {
-      nextSlideEs();
+langBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const lang = btn.dataset.lang;
+
+    if (lang === 'es') {
+      heroTrackEs?.classList.add('is-visible');
+      heroTrackEn?.classList.remove('is-visible');
+    } else {
+      heroTrackEn?.classList.add('is-visible');
+      heroTrackEs?.classList.remove('is-visible');
     }
-  }, 3000);
-
-  setInterval(() => {
-    if (sliderEn.classList.contains('active')) {
-      nextSlideEn();
-    }
-  }, 3000);
-
-  langButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const lang = btn.dataset.lang;
-
-      if (lang === 'es') {
-        sliderEs.classList.add('active');
-        sliderEn.classList.remove('active');
-      } else {
-        sliderEn.classList.add('active');
-        sliderEs.classList.remove('active');
-      }
-    });
   });
+});
 </script>
 
-</body>
-</html>
-</body>
-</html>
 </body>
 </html>
