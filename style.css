@@ -3013,7 +3013,7 @@ body.english .section-bono .lang-en {
   }
 }
 
-   /* HERO DEFINITIVO */
+  /* HERO DEFINITIVO */
 .hero-final {
   width: 100%;
   margin: 0;
@@ -3030,7 +3030,7 @@ body.english .section-bono .lang-en {
 
 .hero-final-title h1 {
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 900px;
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.2rem, 4.5vw, 5rem);
   line-height: 1.05;
@@ -3057,6 +3057,18 @@ body.english .section-bono .lang-en {
 .hero-final-video {
   width: 100%;
   display: block;
+}
+
+/* BOTON */
+.hero-final-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 /* ORDENADOR */
@@ -3107,15 +3119,4 @@ body.english .section-bono .lang-en {
     white-space: normal;
     text-align: center;
   }
-}
-
-.hero-final-btn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 30;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
 }
