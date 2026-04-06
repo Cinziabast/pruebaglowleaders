@@ -2916,3 +2916,19 @@ body.english .section-bono .lang-en {
     max-width: 90%;
   }
 }
+
+.video-wrapper {
+  position: relative;
+}
+
+.hero-video {
+  width: 100%;
+  display: block;
+}
+
+.hero-cta {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+}
