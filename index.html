@@ -1137,38 +1137,64 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    nextBtn?.addEventListener("click", () => {
+       nextBtn?.addEventListener("click", () => {
       testimonialsSlider.scrollBy({
         left: getScrollAmount(),
         behavior: "smooth"
       });
     });
   }
+
+  const slidesEs = document.querySelectorAll('.slider-es .slide');
+  const slidesEn = document.querySelectorAll('.slider-en .slide');
+  const sliderEs = document.querySelector('.slider-es');
+  const sliderEn = document.querySelector('.slider-en');
+  const langButtons = document.querySelectorAll('.lang-btn');
+
+  let currentEs = 0;
+  let currentEn = 0;
+
+  function nextSlideEs() {
+    slidesEs[currentEs].classList.remove('active');
+    currentEs = (currentEs + 1) % slidesEs.length;
+    slidesEs[currentEs].classList.add('active');
+  }
+
+  function nextSlideEn() {
+    slidesEn[currentEn].classList.remove('active');
+    currentEn = (currentEn + 1) % slidesEn.length;
+    slidesEn[currentEn].classList.add('active');
+  }
+
+  setInterval(() => {
+    if (sliderEs.classList.contains('active')) {
+      nextSlideEs();
+    }
+  }, 3000);
+
+  setInterval(() => {
+    if (sliderEn.classList.contains('active')) {
+      nextSlideEn();
+    }
+  }, 3000);
+
+  langButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+
+      if (lang === 'es') {
+        sliderEs.classList.add('active');
+        sliderEn.classList.remove('active');
+      } else {
+        sliderEn.classList.add('active');
+        sliderEs.classList.remove('active');
+      }
+    });
+  });
 </script>
 
-  <script>
-const slidesEs = document.querySelectorAll('.slider-es .slide');
-const slidesEn = document.querySelectorAll('.slider-en .slide');
-
-let currentEs = 0;
-let currentEn = 0;
-
-function nextSlideEs() {
-  slidesEs[currentEs].classList.remove('active');
-  currentEs = (currentEs + 1) % slidesEs.length;
-  slidesEs[currentEs].classList.add('active');
-}
-
-function nextSlideEn() {
-  slidesEn[currentEn].classList.remove('active');
-  currentEn = (currentEn + 1) % slidesEn.length;
-  slidesEn[currentEn].classList.add('active');
-}
-
-setInterval(nextSlideEs, 4000);
-setInterval(nextSlideEn, 4000);
-</script>
-
+</body>
+</html>
 </body>
 </html>
 </body>
