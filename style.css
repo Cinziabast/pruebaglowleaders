@@ -2932,3 +2932,26 @@ body.english .section-bono .lang-en {
   bottom: 40px;
   transform: translateX(-50%);
 }
+
+/* TITULOS DE SECCION */
+.section-title {
+  font-size: 42px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #4e3f2a;
+  margin-bottom: 50px;
+}
+
+.center-title {
+  text-align: center;
+}
+
+/* LINEA DEBAJO DEL TITULO */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #c8b096;
+  margin: 14px auto 0;
+}
