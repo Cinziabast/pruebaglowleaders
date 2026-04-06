@@ -2962,3 +2962,50 @@ body.english .section-bono .lang-en {
   background: #c8b096;
   margin: 14px auto 0;
 }
+
+/* ===== HERO SLIDESHOW NUEVO ===== */
+.hero-slideshow-new {
+  position: relative;
+  width: 100vw;
+  height: 85vh;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+}
+
+.hero-track-es,
+.hero-track-en {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.hero-track-es.is-visible,
+.hero-track-en.is-visible {
+  display: block;
+}
+
+.hero-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out;
+}
+
+.hero-frame.is-active {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .hero-slideshow-new {
+    height: 65vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slideshow-new {
+    height: 45vh;
+  }
+}
