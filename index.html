@@ -1145,3 +1145,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 </script>
+
+  <script>
+const slidesEs = document.querySelectorAll('.slider-es .slide');
+const slidesEn = document.querySelectorAll('.slider-en .slide');
+
+let currentEs = 0;
+let currentEn = 0;
+
+function nextSlideEs() {
+  slidesEs[currentEs].classList.remove('active');
+  currentEs = (currentEs + 1) % slidesEs.length;
+  slidesEs[currentEs].classList.add('active');
+}
+
+function nextSlideEn() {
+  slidesEn[currentEn].classList.remove('active');
+  currentEn = (currentEn + 1) % slidesEn.length;
+  slidesEn[currentEn].classList.add('active');
+}
+
+setInterval(nextSlideEs, 4000);
+setInterval(nextSlideEn, 4000);
+</script>
+
+</body>
+</html>
+</body>
+</html>
