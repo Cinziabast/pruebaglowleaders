@@ -2119,10 +2119,10 @@ video,
 }
 
 .popup-cta {
-  position: absolute;
-  bottom: 90px;
-  left: 64%;
-  transform: translateX(-40%); /* 🔥 ajuste fino final */
+  position: absolute !important;
+  bottom: 90px !important;
+  left: 72% !important;
+  transform: translateX(-40%) !important;
   
   background: #425e54;
   color: #fff;
@@ -2132,6 +2132,7 @@ video,
   font-weight: 600;
   text-align: center;
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  z-index: 20 !important;
 }
 
 @media (max-width: 768px) {
