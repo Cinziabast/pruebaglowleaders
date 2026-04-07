@@ -2276,36 +2276,13 @@ h2,
 /* =========================
    EQUIPO CENTRADO TOTAL
 ========================= */
-.team-card {
-  text-align: center;
-}
 
-.team-card h4 {
-  text-align: center;
+.team-card,
+.team-card * {
+  text-align: center !important;
 }
 
 .team-card p {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 90%;
-}
-
-.product-card h4 {
-  text-align: center;
-  letter-spacing: 3px;
-}
-
-/* NOMBRES EQUIPO */
-.team-name {
-  font-family: 'Belleza', sans-serif !important;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* TEXTO PLAZAS */
-.plazas-text {
-  font-family: 'Belleza', sans-serif !important;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  max-width: 260px;
+  margin: 0 auto;
 }
