@@ -2157,3 +2157,45 @@ p,
 li {
   font-family: 'Arapey', serif;
 }
+
+h1, h2, h3, h4, h5, h6,
+.section-label,
+.main-title,
+.section-heading h2 {
+  font-family: 'Belleza', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+/* =========================
+   TIPOGRAFÍA PRO
+========================= */
+
+/* Título principal */
+h1,
+.main-title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  letter-spacing: 3px;
+  line-height: 1.1;
+}
+
+/* Subtítulos */
+h2,
+.section-heading h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: 2.5px;
+}
+
+/* Texto descriptivo */
+p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Labels tipo “BENEFICIOS” */
+.section-label {
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+}
