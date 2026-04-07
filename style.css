@@ -2140,11 +2140,13 @@ video,
   .popup-cta {
     left: 50%;
     transform: translateX(-50%);
-    bottom: 70px;
+    bottom: 45px;
 
-    width: calc(100% - 40px);
-    max-width: 320px;
+    max-width: 200px; /* 🔥 más estrecho */
+    padding: 7px 10px; /* 🔥 más pequeño */
+    font-size: 11px; /* 🔥 más fino */
 
+    border-radius: 20px;
     white-space: normal;
     text-align: center;
   }
