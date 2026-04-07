@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (sessionStorage.getItem(key)) return;
 
     if (lang === "en") {
-      popupImage.src = "images/imagenpopin.png";
+      popupImage.src = "imagenpopin.png";
       popupImage.alt = "Glow experience for free";
     } else {
-      popupImage.src = "images/imagenpopes.png";
+      popupImage.src = "imagenpopes.png";
       popupImage.alt = "Experiencia Glow gratis";
     }
 
