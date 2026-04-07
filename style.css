@@ -2122,7 +2122,7 @@ video,
   position: absolute;
   bottom: 90px;
   left: 64%;
-  transform: translateX(-40%); /* 🔥 mueve a la derecha sin romper proporción */
+  transform: translateX(-40%); /* 🔥 ajuste fino final */
   
   background: #425e54;
   color: #fff;
