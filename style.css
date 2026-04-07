@@ -2297,6 +2297,16 @@ h1, h2, h3,
   text-align: center;
 }
 
+/* POPUP EN BELLEZA */
+.popup-box,
+.popup-box h1,
+.popup-box h2,
+.popup-box h3,
+.popup-box p,
+.popup-box span,
+.popup-box a {
+  font-family: 'Belleza', sans-serif !important;
+}
 
 
 
