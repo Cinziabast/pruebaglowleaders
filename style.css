@@ -2151,3 +2151,9 @@ video,
     text-align: center;
   }
 }
+
+body,
+p,
+li {
+  font-family: 'Arapey', serif;
+}
