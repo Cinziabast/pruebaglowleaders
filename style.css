@@ -2290,3 +2290,8 @@ h2,
   margin-right: auto;
   max-width: 90%;
 }
+
+.product-card h4 {
+  text-align: center;
+  letter-spacing: 3px;
+}
