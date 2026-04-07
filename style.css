@@ -2274,21 +2274,33 @@ h2,
 }
 
 /* =========================
-   EQUIPO CENTRADO TOTAL
+   EQUIPO CENTRADO DEFINITIVO
 ========================= */
 
-.team-card,
-.team-card * {
+/* contenedor interno */
+.team-content,
+.team-text,
+.team-note {
   text-align: center !important;
+  align-items: center !important;
 }
 
+/* centrar elementos dentro */
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* textos */
 .team-card p {
   max-width: 260px;
   margin: 0 auto;
+  text-align: center !important;
 }
 
-.team-name {
-  font-family: 'Belleza', sans-serif !important;
-  text-transform: uppercase;
-  letter-spacing: 3px; /* un pelín más elegante */
+/* nombres */
+.team-name,
+.team-card h4 {
+  text-align: center !important;
 }
