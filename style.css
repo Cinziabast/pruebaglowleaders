@@ -2199,3 +2199,22 @@ p {
   font-size: 0.85rem;
   letter-spacing: 4px;
 }
+
+.main-title,
+.main-title span {
+  text-transform: uppercase;
+}
+
+/* FOOTER TEXTOS */
+.footer,
+.footer p,
+.footer a {
+  color: #1a1a1a; /* 🔥 más oscuro */
+}
+
+/* TEXTO PRINCIPAL (el que quieres en blanco) */
+.footer strong,
+.footer .highlight,
+.footer h3 {
+  color: #ffffff;
+}
