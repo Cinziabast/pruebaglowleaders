@@ -2218,3 +2218,48 @@ p {
 .footer h3 {
   color: #ffffff;
 }
+
+/* =========================
+   HERO FINAL - TIPOGRAFÍA EXACTA
+========================= */
+.hero-final-title h1,
+.hero-final-title h1 span {
+  font-family: 'Belleza', sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  font-weight: 400 !important;
+}
+
+/* =========================
+   FOOTER - TIPOGRAFÍA Y COLOR
+========================= */
+.footer p,
+.footer a,
+.footer .footer-disclaimer,
+.footer .footer-copy {
+  font-family: 'Arapey', serif;
+  color: #1f1f1f;
+}
+
+.footer .footer-legal a {
+  color: #1f1f1f;
+}
+
+.footer .footer-legal a:hover {
+  color: #000000;
+}
+
+/* si quieres mantener algún texto en blanco */
+.footer strong,
+.footer h3,
+.footer .highlight {
+  color: #ffffff;
+}
+
+/* asegura fondo sólido del footer */
+.footer {
+  background: #4c6f62;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+}
