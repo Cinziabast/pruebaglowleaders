@@ -2305,3 +2305,34 @@ h2,
   margin-left: auto;
   margin-right: auto;
 }
+
+/* =========================
+   BLOQUE FINAL EN BELLEZA
+========================= */
+
+/* botón principal */
+.section-final-cta .btn,
+.section-final-cta .btn span,
+.hero-final-btn {
+  font-family: 'Belleza', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* nombres debajo de fotos (Sandra, Firas, María) */
+.section-final-cta h3,
+.section-final-cta .team-name {
+  font-family: 'Belleza', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* texto plazas */
+.plazas-text {
+  font-family: 'Belleza', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.3rem; /* 🔥 más grande */
+  text-align: center;
+  margin-top: 20px;
+}
