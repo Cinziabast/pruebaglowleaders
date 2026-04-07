@@ -2295,3 +2295,17 @@ h2,
   text-align: center;
   letter-spacing: 3px;
 }
+
+/* NOMBRES EQUIPO */
+.team-name {
+  font-family: 'Belleza', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* TEXTO PLAZAS */
+.plazas-text {
+  font-family: 'Belleza', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
