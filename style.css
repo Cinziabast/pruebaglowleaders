@@ -2120,8 +2120,8 @@ video,
 
 .popup-cta {
   position: absolute;
-  bottom: 90px; /* 🔥 MÁS ARRIBA */
-  left: 50%;
+  bottom: 90px;
+  left: 60%; /* 🔥 MÁS A LA DERECHA */
   transform: translateX(-50%);
   
   background: #425e54;
@@ -2139,10 +2139,4 @@ video,
     bottom: 70px;
     width: calc(100% - 40px);
   }
-}
-
-.popup-image {
-  display: block;
-  width: 100%;
-  max-width: 600px;
 }
