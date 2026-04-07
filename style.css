@@ -2308,6 +2308,12 @@ h1, h2, h3,
   font-family: 'Belleza', sans-serif !important;
 }
 
-
-
-
+.btn,
+.btn span,
+.hero-final-btn,
+a.btn,
+button.btn {
+  font-family: 'Belleza', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
