@@ -2286,3 +2286,9 @@ h2,
   max-width: 260px;
   margin: 0 auto;
 }
+
+.team-name {
+  font-family: 'Belleza', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 3px; /* un pelín más elegante */
+}
