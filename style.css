@@ -2152,27 +2152,55 @@ video,
   }
 }
 
+/* =========================
+   TIPOGRAFÍA BASE
+========================= */
 body,
 p,
 li {
   font-family: 'Arapey', serif;
 }
 
+p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* =========================
+   TIPOGRAFÍA BELLEZA (TODO LO IMPORTANTE)
+========================= */
 h1, h2, h3, h4, h5, h6,
 .section-label,
 .main-title,
-.section-heading h2 {
-  font-family: 'Belleza', sans-serif;
+.section-heading h2,
+.products-side-title,
+.product-card h4,
+.team-card h4,
+.btn,
+.btn-primary,
+.btn-large,
+.btn span,
+.hero-final-btn,
+a.btn,
+button.btn,
+.hero-final-title h1,
+.hero-final-title h1 span,
+.popup-box,
+.popup-box h1,
+.popup-box h2,
+.popup-box h3,
+.popup-box p,
+.popup-box span,
+.popup-box a {
+  font-family: 'Belleza', sans-serif !important;
   text-transform: uppercase;
-  letter-spacing: 2px;
   font-weight: 400;
 }
 
 /* =========================
-   TIPOGRAFÍA PRO
+   JERARQUÍA TIPOGRÁFICA
 ========================= */
-
-/* Título principal */
 h1,
 .main-title {
   font-size: clamp(2.2rem, 5vw, 4rem);
@@ -2180,59 +2208,49 @@ h1,
   line-height: 1.1;
 }
 
-/* Subtítulos */
 h2,
 .section-heading h2 {
   font-size: clamp(1.8rem, 4vw, 3rem);
   letter-spacing: 2.5px;
 }
 
-/* Texto descriptivo */
-p {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* Labels tipo “BENEFICIOS” */
 .section-label {
   font-size: 0.85rem;
   letter-spacing: 4px;
 }
 
-.main-title,
-.main-title span {
-  text-transform: uppercase;
-}
-
-/* FOOTER TEXTOS */
-.footer,
-.footer p,
-.footer a {
-  color: #1a1a1a; /* 🔥 más oscuro */
-}
-
-/* TEXTO PRINCIPAL (el que quieres en blanco) */
-.footer strong,
-.footer .highlight,
-.footer h3 {
-  color: #ffffff;
+/* =========================
+   BOTONES
+========================= */
+.btn {
+  letter-spacing: 2px;
 }
 
 /* =========================
-   HERO FINAL - TIPOGRAFÍA EXACTA
+   EQUIPO
 ========================= */
-.hero-final-title h1,
-.hero-final-title h1 span {
-  font-family: 'Belleza', sans-serif !important;
-  text-transform: uppercase !important;
-  letter-spacing: 2px !important;
-  font-weight: 400 !important;
+.team-card h4,
+.team-card p {
+  text-align: center;
 }
 
 /* =========================
-   FOOTER - TIPOGRAFÍA Y COLOR
+   PRODUCTOS
 ========================= */
+.product-card h4 {
+  text-align: center;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: #4c6f62;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+}
+
 .footer p,
 .footer a,
 .footer .footer-disclaimer,
@@ -2249,71 +2267,8 @@ p {
   color: #000000;
 }
 
-/* si quieres mantener algún texto en blanco */
 .footer strong,
 .footer h3,
 .footer .highlight {
   color: #ffffff;
-}
-
-/* asegura fondo sólido del footer */
-.footer {
-  background: #4c6f62;
-  position: relative;
-  z-index: 5;
-  overflow: hidden;
-}
-
-/* =========================
-   FUENTE BELLEZA FORZADA
-========================= */
-
-h1, h2, h3,
-.section-heading h2,
-.section-label,
-.main-title,
-.products-side-title,
-.product-card h4,
-.team-card h4,
-.btn,
-.btn-primary,
-.btn-large {
-  font-family: 'Belleza', sans-serif !important;
-}
-
-/* CENTRADO EQUIPO */
-.team-card h4,
-.team-card p {
-  text-align: center;
-}
-
-/* BOTONES */
-.btn {
-  letter-spacing: 1px;
-}
-
-/* PRODUCTOS */
-.product-card h4 {
-  text-align: center;
-}
-
-/* POPUP EN BELLEZA */
-.popup-box,
-.popup-box h1,
-.popup-box h2,
-.popup-box h3,
-.popup-box p,
-.popup-box span,
-.popup-box a {
-  font-family: 'Belleza', sans-serif !important;
-}
-
-.btn,
-.btn span,
-.hero-final-btn,
-a.btn,
-button.btn {
-  font-family: 'Belleza', sans-serif !important;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
