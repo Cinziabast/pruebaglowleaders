@@ -2140,3 +2140,9 @@ video,
     width: calc(100% - 40px);
   }
 }
+
+.popup-image {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+}
