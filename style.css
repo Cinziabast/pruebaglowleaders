@@ -2263,3 +2263,41 @@ p {
   z-index: 5;
   overflow: hidden;
 }
+
+/* =========================
+   FUENTE BELLEZA FORZADA
+========================= */
+
+h1, h2, h3,
+.section-heading h2,
+.section-label,
+.main-title,
+.products-side-title,
+.product-card h4,
+.team-card h4,
+.btn,
+.btn-primary,
+.btn-large {
+  font-family: 'Belleza', sans-serif !important;
+}
+
+/* CENTRADO EQUIPO */
+.team-card h4,
+.team-card p {
+  text-align: center;
+}
+
+/* BOTONES */
+.btn {
+  letter-spacing: 1px;
+}
+
+/* PRODUCTOS */
+.product-card h4 {
+  text-align: center;
+}
+
+
+
+
+
