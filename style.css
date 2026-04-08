@@ -2486,32 +2486,38 @@ h2,
 }
 
 /* =========================
-   SELECCIÓN ASESOR
+   SELECCIÓN ASESOR (REAL)
 ========================= */
 
+/* ocultar radio original */
+input[name="asesor"] {
+  display: none;
+}
+
+/* tarjeta */
 .asesor-card {
   transition: all 0.3s ease;
   cursor: pointer;
   border: 2px solid transparent;
 }
 
-/* HOVER */
+/* hover */
 .asesor-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* SELECCIONADO */
-.asesor-card.active {
-  border: 2px solid #425e54; /* tu verde */
+/* 🔥 SELECCIONADO */
+input[name="asesor"]:checked + .asesor-card {
+  border: 2px solid #425e54;
   background: #f7f5f2;
   box-shadow: 0 12px 30px rgba(66, 94, 84, 0.25);
   transform: translateY(-4px);
 }
 
-/* NOMBRE */
-.asesor-card.active h4,
-.asesor-card.active p {
+/* texto seleccionado */
+input[name="asesor"]:checked + .asesor-card h4,
+input[name="asesor"]:checked + .asesor-card p {
   color: #425e54;
   font-weight: 600;
 }
