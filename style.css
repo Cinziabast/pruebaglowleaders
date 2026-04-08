@@ -2492,10 +2492,7 @@ h2,
 }
 
 .advisor-option:has(input:checked) {
-  background: #e8efec;
-  border: 2px solid #425e54;
-  box-shadow: 0 12px 30px rgba(66, 94, 84, 0.25);
-  transform: translateY(-4px);
+  background: #f1f4f1;
 }
 
 .advisor-option:has(input:checked) span {
@@ -2504,6 +2501,5 @@ h2,
 }
 
 .advisor-option:has(input:checked) img {
-  outline: 4px solid #425e54;
-  outline-offset: 4px;
+  box-shadow: 0 0 0 3px #425e54;
 }
