@@ -1,34 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =========================
+    /* =========================
      POPUP BIENVENIDA
   ========================= */
   const popup = document.getElementById("welcomePopup");
   const closePopup = document.getElementById("closePopup");
   const popupImage = document.getElementById("popupImage");
+  const popupCTA = document.getElementById("popupCta");
+  const popupImageLink = document.getElementById("popupImageLink");
+
+  let currentPopupLang = "es";
+
+  function updatePopupContent(lang = "es") {
+    if (!popup || !popupImage || !popupCTA) return;
+
+    currentPopupLang = lang;
+
+    if (lang === "en") {
+      popupImage.src = "images/imagenpopin.png";
+      popupImage.alt = "Glow experience for free";
+      popupCTA.textContent = popupCTA.dataset.en;
+    } else {
+      popupImage.src = "images/imagenpopes.png";
+      popupImage.alt = "Experiencia Glow gratis";
+      popupCTA.textContent = popupCTA.dataset.es;
+    }
+  }
 
   function openPopup(lang = "es") {
     if (!popup || !popupImage) return;
 
+    currentPopupLang = lang;
+
     const key = "popupShown_" + lang;
+    if (sessionStorage.getItem(key) === "true") return;
 
-    if (sessionStorage.getItem(key)) return;
-
-    if (lang === "en") {
-      popupImage.src = "imagenpopin.png";
-      popupImage.alt = "Glow experience for free";
-    } else {
-      popupImage.src = "imagenpopes.png";
-      popupImage.alt = "Experiencia Glow gratis";
-    }
-
+    updatePopupContent(lang);
     popup.classList.remove("hidden");
-    sessionStorage.setItem(key, "true");
   }
 
   function closePopupBox() {
     if (!popup) return;
+
     popup.classList.add("hidden");
+    sessionStorage.setItem("popupShown_" + currentPopupLang, "true");
   }
 
   if (closePopup) {
@@ -40,6 +55,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target === popup) {
         closePopupBox();
       }
+    });
+  }
+
+  if (popupCTA) {
+    popupCTA.addEventListener("click", () => {
+      closePopupBox();
+    });
+  }
+
+  if (popupImageLink) {
+    popupImageLink.addEventListener("click", () => {
+      closePopupBox();
     });
   }
 
@@ -87,25 +114,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const href = link.getAttribute("href");
 
       if (document.body.classList.contains("english")) {
-        if (href === "aviso-legal.html") {
-          link.setAttribute("href", "legal-notice.html");
-        }
-        if (href === "privacidad.html") {
-          link.setAttribute("href", "privacy-policy.html");
-        }
-        if (href === "cookies.html") {
-          link.setAttribute("href", "cookies-policy.html");
-        }
+        if (href === "aviso-legal.html") link.setAttribute("href", "legal-notice.html");
+        if (href === "privacidad.html") link.setAttribute("href", "privacy-policy.html");
+        if (href === "cookies.html") link.setAttribute("href", "cookies-policy.html");
       } else {
-        if (href === "legal-notice.html") {
-          link.setAttribute("href", "aviso-legal.html");
-        }
-        if (href === "privacy-policy.html") {
-          link.setAttribute("href", "privacidad.html");
-        }
-        if (href === "cookies-policy.html") {
-          link.setAttribute("href", "cookies.html");
-        }
+        if (href === "legal-notice.html") link.setAttribute("href", "aviso-legal.html");
+        if (href === "privacy-policy.html") link.setAttribute("href", "privacidad.html");
+        if (href === "cookies-policy.html") link.setAttribute("href", "cookies.html");
       }
     });
   }
@@ -124,6 +139,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    const placeholderFields = document.querySelectorAll("[data-placeholder-es][data-placeholder-en]");
+    placeholderFields.forEach((field) => {
+      field.placeholder = lang === "en"
+        ? field.dataset.placeholderEn
+        : field.dataset.placeholderEs;
+    });
+
     langButtons.forEach((btn) => {
       btn.classList.toggle("active", btn.dataset.lang === lang);
     });
@@ -131,6 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateHeroImage();
     startHeroSlider();
     updateLegalLinks();
+    updatePopupContent(lang);
     openPopup(lang);
   }
 
@@ -139,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setLanguage(btn.dataset.lang);
     });
   });
-
+  
   /* =========================
      CARRUSEL PRODUCTOS
   ========================= */
@@ -358,7 +381,7 @@ if (klaviyoForm) {
   ========================= */
   setLanguage("es");
 
-  /* =========================
+ /* =========================
    COOKIE BANNER
 ========================= */
 const cookieBanner = document.getElementById("cookieBanner");
@@ -371,10 +394,25 @@ const closeCookieModal = document.getElementById("closeCookieModal");
 const saveCookieSettings = document.getElementById("saveCookieSettings");
 const analyticsCookies = document.getElementById("analyticsCookies");
 
-const savedCookieConsent = localStorage.getItem("cookieConsent");
+function getCookieConsent() {
+  const saved = localStorage.getItem("cookieConsent");
+  if (!saved) return null;
+
+  try {
+    return JSON.parse(saved);
+  } catch (error) {
+    return null;
+  }
+}
+
+const savedCookieConsent = getCookieConsent();
 
 if (!savedCookieConsent && cookieBanner) {
   cookieBanner.classList.remove("hidden");
+}
+
+if (savedCookieConsent && analyticsCookies) {
+  analyticsCookies.checked = !!savedCookieConsent.analytics;
 }
 
 if (acceptCookies) {
@@ -383,7 +421,10 @@ if (acceptCookies) {
       necessary: true,
       analytics: true
     }));
-    cookieBanner.classList.add("hidden");
+
+    if (analyticsCookies) analyticsCookies.checked = true;
+    if (cookieBanner) cookieBanner.classList.add("hidden");
+    if (cookieModal) cookieModal.classList.add("hidden");
   });
 }
 
@@ -393,19 +434,28 @@ if (rejectCookies) {
       necessary: true,
       analytics: false
     }));
-    cookieBanner.classList.add("hidden");
+
+    if (analyticsCookies) analyticsCookies.checked = false;
+    if (cookieBanner) cookieBanner.classList.add("hidden");
+    if (cookieModal) cookieModal.classList.add("hidden");
   });
 }
 
 if (configCookies) {
   configCookies.addEventListener("click", () => {
-    cookieModal.classList.remove("hidden");
+    const currentConsent = getCookieConsent();
+
+    if (analyticsCookies) {
+      analyticsCookies.checked = currentConsent ? !!currentConsent.analytics : false;
+    }
+
+    if (cookieModal) cookieModal.classList.remove("hidden");
   });
 }
 
 if (closeCookieModal) {
   closeCookieModal.addEventListener("click", () => {
-    cookieModal.classList.add("hidden");
+    if (cookieModal) cookieModal.classList.add("hidden");
   });
 }
 
@@ -416,9 +466,24 @@ if (saveCookieSettings) {
       analytics: analyticsCookies ? analyticsCookies.checked : false
     }));
 
-    cookieModal.classList.add("hidden");
-    cookieBanner.classList.add("hidden");
+    if (cookieModal) cookieModal.classList.add("hidden");
+    if (cookieBanner) cookieBanner.classList.add("hidden");
   });
 }
 
+if (cookieModal) {
+  cookieModal.addEventListener("click", (e) => {
+    if (e.target === cookieModal) {
+      cookieModal.classList.add("hidden");
+    }
+  });
+}
+    
+     /* =========================
+     INICIO
+  ========================= */
+  setLanguage("es");
+  openPopup("es");
+
 });
+                        
