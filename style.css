@@ -2485,39 +2485,25 @@ h2,
   }
 }
 
-/* =========================
-   SELECCIÓN ASESOR (REAL)
-========================= */
+/* SELECCIÓN ASESOR */
 
-/* ocultar radio original */
-input[name="asesor"] {
+.advisor-option input {
   display: none;
 }
 
-/* tarjeta */
-.asesor-card {
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-/* hover */
-.asesor-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* 🔥 SELECCIONADO */
-input[name="asesor"]:checked + .asesor-card {
+.advisor-option:has(input:checked) {
+  background: #e8efec;
   border: 2px solid #425e54;
-  background: #f7f5f2;
   box-shadow: 0 12px 30px rgba(66, 94, 84, 0.25);
   transform: translateY(-4px);
 }
 
-/* texto seleccionado */
-input[name="asesor"]:checked + .asesor-card h4,
-input[name="asesor"]:checked + .asesor-card p {
+.advisor-option:has(input:checked) span {
   color: #425e54;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.advisor-option:has(input:checked) img {
+  outline: 4px solid #425e54;
+  outline-offset: 4px;
 }
