@@ -2470,3 +2470,17 @@ h2,
     bottom: 14px !important;
   }
 }
+
+/* =========================================
+   ARREGLAR ANCHO BOTÓN EN IPAD + ORDENADOR
+========================================= */
+
+@media (min-width: 769px) {
+  .hero-final-btn {
+    width: auto !important;
+    max-width: 420px;
+    display: inline-flex !important;
+    justify-content: center;
+    padding: 16px 28px;
+  }
+}
